@@ -95,7 +95,7 @@ class ScopedClient
   fullPath: (p) ->
     search = qs.stringify @options.query
     full   = this.join p
-    full  += "?#{search}" if search.length > 0
+    full  += "?#{search.substring 0,search.length-1}" if search.length > 0
     full
 
   scope: (url, options, callback) ->
